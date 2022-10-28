@@ -22,7 +22,7 @@ export function Post() {
         <p> 👉{'   '} <a href="">fendi.edv/doctorcare </a> </p>
         <p>
           <a href=""> #novoprojeto </a>{'   '}
-          <a href="">  #nlw </a> {'   '}
+          <a href=""> #nlw </a> {'   '}
           <a href=""> #rocketseat</a>
         </p>
       </div>
