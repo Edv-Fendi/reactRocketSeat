@@ -3,30 +3,23 @@ import { Comment } from './Comment';
 
 import styles from './Post.module.css';
 
-export function Post() {
+export function Post({ author, publishedAt }) {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar hasBorder={true} src="https://github.com/Edv-Fendi.png" />
+          <Avatar src={author.avatarUrl}/>
           <div className={styles.authorInfo}>
-            <strong>Edvaldo Fendi</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
-        <time title="26 de Outubro às 10:51h" dateTime='2022-10-26 10:51:38'>Publicado há 1hr</time>
+        <time title="26 de Outubro às 10:51h" dateTime='2022-10-26 10:51:38'>{publishedAt.toString()}</time>
       </header>
 
       <div className={styles.content}>
-        <p>Fala galeraa 👋</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias perspiciatis officia aliquam dignissimos, quaerat architecto temporibus repudiandae magnam saepe assumenda nisi fugiat laboriosam minima aperiam, nihil doloremque ea voluptates? 🚀</p>
-        <p> 👉{'   '} <a href="">fendi.edv/doctorcare </a> </p>
-        <p>
-          <a href=""> #novoprojeto </a>{'   '}
-          <a href=""> #nlw </a> {'   '}
-          <a href=""> #rocketseat</a>
-        </p>
+        
       </div>
 
       <form className={styles.comentForm}>
