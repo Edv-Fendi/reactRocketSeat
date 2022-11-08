@@ -6,7 +6,38 @@ import styles from './App.module.css';
 
 import './global.css';
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/Edv-Fendi.png",
+      name: "Edvaldo Fendi",
+      role: "Digital DOC"
+    },
 
+    content: [
+      { type: 'paragraph', content: "Fala galeraa 👋" },
+      { type: 'paragraph', content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias perspiciatis officia aliquam dignissimos, quaerat architecto temporibus repudiandae magnam saepe assumenda nisi fugiat laboriosam minima aperiam, nihil doloremque ea voluptates? 🚀" },
+      { type: 'link', content: 'fendi.edv/doctorcare' },
+    ],
+    publishedAt: new Date('2022-11-08 10:03:00'),
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: "https://github.com/dumaciel.png",
+      name: "Eduardo Maciel",
+      role: "Convicti "
+    },
+
+    content: [
+      { type: 'paragraph', content: "Fala galeraa 👋" },
+      { type: 'paragraph', content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias perspiciatis officia aliquam dignissimos, quaerat architecto temporibus repudiandae magnam saepe assumenda nisi fugiat laboriosam minima aperiam, nihil doloremque ea voluptates? 🚀" },
+      { type: 'link', content: 'fendi.edv/doctorcare' },
+    ],
+    publishedAt: new Date('2022-11-08 20:03:00'),
+  },
+];
 
 export function App() {
   return (
@@ -18,14 +49,15 @@ export function App() {
 
 
         <main>
-          <Post
-            author="Edvaldo Fendi"
-            content="lorem ipsum dolor sit amet, consectetur adip"
-          />
-          <Post
-            author="Joao Brasil"
-            content="Vai neymar!!!"
-          />
+
+          {posts.map(post => {
+            return (
+              <Post
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />)
+          })}
         </main>
       </div>
     </div>
